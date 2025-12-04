@@ -5,39 +5,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class=" navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
+   <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+</nav>
+
+<div class="intro">
+  <h2>Make a simple workout plan here !</h2>
+  <p>Learn practical wotkout plans and
+     exercizes.For any kind of level:Beginner, 
+     ammateur, ect.You can also learn how to manage
+      and track your food and daily habits.</p>
+</div>
+
+<div class="food_foto">
+
+
+  <h4>Learn hoe to track and manage youre food</h4>
+
+  <div class="food_foto">
+
+
+  <h4>Learn what is your goal and what exercizes you ned to do</h4>
+
+  <div class="food_foto">
+
+
+  <h4>See our gym product store</h4>
+
+  <div class="goals">
+<h5>Learn what you need to do based of your goal</h5>
+
+ <form>
+        <label for="username">Enter your goal</label><br>
+         <div class="container-fluid">
+   <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   whats your goal
+  </button>
+  <ul class="goal">
+    <li><a class="goal-item">Lose weight</a></li>
+    <li><a class="goal-item" >Gain muscle</a></li>
+    <li><a class="goal-item" >burn fat</a></li>
+    
+  </ul>
+</div>
+
+        <div class="lose fat">
+          <p>If you</p>
+        </div>
+
+        <div class="lose fat">
+          <p>If you</p>
+        </div>
+
+        <div class="lose fat">
+          <p>If you</p>
+        </div>
+
+
+
+
+
+        
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    
+
+
+
+
+<button id="openModal">Sign Up</button>
+
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+   
+    <span class="close">&times;</span>
+    
+   
+    <form id="signupForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" />
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Track Food</h5>
+          <p class="card-text">Manage your meals and calories.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Workout Plans</h5>
+          <p class="card-text">Follow beginner to advanced plans.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Store</h5>
+          <p class="card-text">Check out our gym products.</p>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</div>
+
+
+<script src="main.js"></script>
+
 </body>
 </html>
