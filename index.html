@@ -1,119 +1,97 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Home</title>
+    <title>GetUp - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Bootstrap CSS -->    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-   
-       
-   
 </head>
-
 <body>
+    <nav class="navbar bg-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand text-white">GetUp</a>
+            <div>
+                <a href="index.html" class="nav-link text-white d-inline">Home</a>
+                <a href="workouts.html" class="nav-link text-white d-inline">Workouts</a>
+                <a href="signup.html" class="nav-link text-white d-inline">Sign Up</a>
+            </div>
+        </div>
+    </nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="">FitLife</a>
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Transform Your Body Today</h1>
+        <p>Join GetUp and start your fitness journey</p>
+        <div>
+            <a href="workouts.html" class="btn btn-light me-2">Browse Workouts</a>
+            <a href="signup.html" class="btn btn-outline-light">Get Started</a>
+        </div>
+    </header>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <main class="container py-5">
+        <div class="row text-center mb-5">
+            <div class="col-md-4 mb-3">
+                <h5>Custom Plans</h5>
+                <p>Personalized workout routines</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Track Progress</h5>
+                <p>Monitor your fitness journey</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Expert Guidance</h5>
+                <p>Tips from certified trainers</p>
+            </div>
+        </div>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Workout Plans</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Store</a></li>
-        <li class="nav-item"><a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <section class="mb-5">
+            <h2 class="text-center mb-4">What can you learn here</h2>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Workout</th>
+                        <th>Duration</th>
+                        <th>Level</th>
+                        <th>Equipment</th>
+                        <th>Food</th>
+                    </tr>
+                </thead>
+                <tbody id="workoutTable">
+                </tbody>
+            </table>
+        </section>
 
+       
+    </main>
 
-<div class="intro">
-    <h1>Create Your Workout Plan Easily</h1>
-    <p>Learn workouts, track food, and achieve your fitness goals in a simple and effective way.</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="row">
+        
+              
+                    
+                </div> <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: info@getup.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2025 GetUp</p>
+        </div>
+    </footer>
 
-<div class="container mt-5">
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
 
-    <div class="cards">
-      <div class="card">
-        <h5>Track Food</h5>
-        <p>Keep track of calories and daily meals.</p>
-      </div>
 
 
  
-      <div class="card">
-        <h5>Workout Plans</h5>
-        <p>Beginner to advanced workout programs.</p>
-      </div>
-  
-
-    
-      <div class="card">
-        <h5>Fitness Store</h5>
-        <p>High-quality gym equipment and products.</p>
-
-        <div>
-      
-    </div>
-
-    
-    </div>
 
 
-<div class="container mt-5">
-  <h3 class="text-center">Choose Your Fitness Goal</h3>
-
-  <div class="d-flex justify-content-center mt-3">
-      <select class="form-select w-50">
-        <option>Lose Weight</option>
-        <option>Gain Muscle</option>
-        <option>Burn Fat</option>
-      </select>
-  </div>
-
-
-<div class="modal fade"  tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title">Sign Up</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        <label>Email:</label>
-        <input type="email" class="emiail_sign_up" placeholder="Enter email">
-
-        <label>Password:</label>
-        <input type="password" class="password" placeholder="Enter password">
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-primary">Create Account</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<hr>
-<hr>
-
-<footer>
-    © 2025 FitLife. All Rights Reserved.
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
