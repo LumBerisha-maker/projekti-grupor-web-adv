@@ -17,27 +17,41 @@ nav {
 }
 
 .navbar-brand {
-  font-size: 1.6rem;
+ 
   font-weight: bold;
 }
 
 .nav-link {
-  color: #ddd !important;
+  color: #ddd ;
   margin-left: 15px;
-  transition: 0.3s;
+ 
 }
 
 .nav-link:hover {
-  color: #fff !important;
-  transform: scale(1.05);
+  color: #fff ;
+  transform: scale();
 }
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.tab-btn.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
 
 
 .intro {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #1d1d1d, #383838);
-  color: white;
+  background:rgb(5, 5, 57);
+  color:white;
 }
 
 .intro h1 {
@@ -72,18 +86,18 @@ nav {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY();
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .card h5 {
-  font-size: 1.3rem;
+  
   margin-bottom: 10px;
   color: #333;
 }
 
 .card p {
-  font-size: 0.95rem;
+  
   color: #555;
 }
 
@@ -97,7 +111,6 @@ h3 {
   height: 45px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1rem;
   transition: 0.3s;
 }
 
@@ -112,5 +125,5 @@ footer {
   background: #1d1d1d;
   color: white;
   margin-top: 40px;
-  font-size: 0.9rem;
+ 
 }
