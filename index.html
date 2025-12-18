@@ -8,22 +8,40 @@
     <title>GetUp - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
 
 </head>
 <body>
-    <nav class="nav">
-        <div class="container">
-            <a href="index.html" class="navbar-brand text-white">GetUp</a>
-            <div>
-                <a href="index.html" >Home</a>
-                <a href="workouts.html" >Workouts</a>
-                <a href="signup.html" >Sign Up</a>
-                <a href="Products.html" >Products</a>
-                <a href="Food_and_Carbs.html" >Food and Carbs</a>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">GetUp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Food_and_Carbs.html">Food</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Sign Up</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="workouts.html">Workouts</a>
+        </li>
+     
+      </ul>
+    </div>
+  </div>
+</nav>
 
     
 
@@ -31,12 +49,11 @@
         <h1>Transform Your Body Today</h1>
         <p>Join GetUp and start your fitness journey</p>
         <div>
-            <a href="workouts.html" class="btn btn-light me-2">Browse Workouts</a>
             <a href="signup.html" class="btn btn-outline-light">Get Started</a>
         </div>
     </header>
 
-    
+  
         <div class="row text-center mb-5">
             <div class="col-md-4 mb-3">
                 <h5>Custom Plans</h5>
@@ -47,7 +64,7 @@
                 <p>Monitor your fitness journey</p>
             </div>
             <div class="col-md-4 mb-3">
-                <h5>Expert Guidance</h5>
+                <h5>Expert Guidance</h5>                            
                 <p>Tips from certified trainers</p>
             </div>
         </div>
@@ -57,8 +74,8 @@
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th>Workout</th>
-                        <th>Duration</th>
+                       
+                        <th>Exercises</th>
                         <th>Level</th>
                         <th>Equipment</th>
                         <th>Food</th>
@@ -69,12 +86,115 @@
             </table>
         </section>
 
+<<<<<<< HEAD
         
+=======
+        <section class="container mt-5">
+  <h2 class="text-center mb-4">What goal do you want?</h2>
+>>>>>>> 746a1c49c16be1d07855930915be62c5c0b1724a
 
+  <ul class="nav nav-tabs justify-content-center" id="goalTabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-goal="lose">Lose Weight</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-goal="gain">Gain Muscle</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-goal="burn">Burn Fat</a>
+    </li>
+  </ul>
+
+  <div class="mt-4 text-center">
+
+    <div class="goal-content" id="lose">
+      <p>Cardio workouts, calorie deficit, healthy meals.</p>
+    </div>
+
+    <div class="goal-content d-none" id="gain">
+      <p>Strength training, protein-rich foods, rest.</p>
+    </div>
+
+    <div class="goal-content d-none" id="burn">
+      <p>HIIT workouts, balanced diet, consistency.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+       <section class="mt-5">
+            <h2 class="text-center mb-4">Why do you need to  join GetUp</h2> 
+
+            <div class="cards">
+         
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Track Progress</h5>
+                            <p>Monitor workouts and improvements</p>
+                        </div>
+                    </div>
+              
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Set Goals</h5>
+                            <p>Define and achieve fitness objectives</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Join Community</h5>
+                            <p>Connect with fitness enthusiasts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+
+         
+        </section>
+
+
+
+
+
+<div id="tabs">
+
+    <h2>What goal do you want?</h2>
+
+	<ul>
+		<li><a href="#item-1">Gain Muscle</a></li>
+		<li><a href="#item-2">Lose Weight</a></li>
+		<li><a href="#item-3">Burn Fat</a></li>
+	</ul>
+
+	<div id="item-1">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ad quisquam, non, reiciendis iusto dolor, numquam voluptatum ex repudiandae provident quasi quis rem quam exercitationem. Cumque repellendus animi soluta nihil.</p>
+	</div>
+	<div id="item-2">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto a ut alias tempora tempore deserunt necessitatibus quidem exercitationem, t ratione velit.</p>
+	</div>
+	<div id="item-3">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ab ea quis dicta esse  dignissimos dolor qui aliquam. Nihil assumenda autem totam vel, suscipit expedita amet, necessitatibus fuga.</p>
+	</div>
+	
+</div>
+
+       
+       
 
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <div class="row">
+            
         
               
                     
@@ -88,7 +208,9 @@
             <p>&copy; 2025 GetUp</p>
         </div>
     </footer>
+    
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
