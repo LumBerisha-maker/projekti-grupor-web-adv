@@ -2,145 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Gallery</title>
+  <title>Food and Carbs</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f2f2f2;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 20px;
     }
 
-    .food-gallery {
+    h1 {
+      text-align: center;
+    }
+
+    .food-container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .food-card {
       background: white;
-      border-radius: 8px;
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       overflow: hidden;
-      width: 250px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .food-card:hover {
-      transform: scale(1.05);
+      text-align: center;
     }
 
     .food-card img {
       width: 100%;
-      height: 200px;
+      height: 140px;
       object-fit: cover;
     }
 
     .food-card h3 {
-      text-align: center;
-      font-size: 1.5rem;
-      color: #333;
-      margin: 10px 0;
+      margin: 10px 0 5px;
     }
 
     .food-card p {
-      padding: 0 15px;
-      text-align: center;
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .food-card button {
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 0 0 8px 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .food-card button:hover {
-      background-color: #0056b3;
+      margin-bottom: 10px;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <div class="food-gallery" id="foodGallery">
-    <!-- Dynamic food cards will be inserted here by JavaScript -->
+  <h1>Food & Carbohydrates</h1>
+  <p style="text-align:center;">Common foods and their carb content</p>
+
+  <div class="food-container">
+    <div class="food-card">
+      <img src="images/oriz me mish.webp" alt="Rice">
+      <h3>Rice</h3>
+      <p>45g carbs</p>
+    </div>
+
+    <div class="food-card">
+      <img src="images/qumshti2.avif" alt="Oats and berries">
+      <h3>Oats and berries</h3>
+      <p>50g carbs</p>
+    </div>
+
+    <div class="food-card">
+      <img src="images/tomel.avif" alt="Milkshake`">
+      <h3>Milkshake</h3>
+      <p>25g carbs</p>
+    </div>
+
+    <div class="food-card">
+      <img src=images/oriz" alt="Chicken">
+      <h3>Chicken</h3>
+      <p>0g carbs</p>
+    </div>
   </div>
 
-  <script>
-    // Array of food objects
-    const foods = [
-      {
-        name: "Chicken and Rice",
-        description: "Chicken and rice is a classic, wholesome meal that combines lean protein and complex carbohydrates, making it both nutritious and satisfying. The chicken provides high-quality protein, essential for muscle repair, immune support, and overall body function, while rice, particularly brown rice, offers a steady source of energy through complex carbs and fiber. This combination makes for a balanced, low-fat meal that’s not only easy to prepare but also versatile, allowing for endless variations with different seasonings, vegetables, or sauces. Whether it’s a simple weekday dinner or a post-workout meal, chicken and rice is a reliable and filling option that supports a healthy, active lifestyle.",
-
-        image: "images/oriz me pul.jpg"
-      },
-      {
-        name: "Oats and Berries",
-        description: "Oats and berries make for a delicious and nutritious combination, perfect for breakfast or a wholesome snack. Oats are a great source of fiber, particularly beta-glucan, which helps lower cholesterol and regulate blood sugar, while also providing long-lasting energy. Berries, packed with antioxidants like vitamin C and anthocyanins, not only add a burst of natural sweetness but also offer a range of health benefits, including boosting immune function and reducing inflammation. Together, oats and berries create a balanced meal that’s rich in fiber, vitamins, and antioxidants, promoting heart health, digestive wellness, and sustained energy throughout the day. It's a simple yet powerful combination that can be easily customized with different types of berries or toppings for added flavor and nutrition.",
-
-        image: "images/qumshti2.avif"
-      },
-      {
-        name: "Protein",
-        description: "Protein is a vital macronutrient that plays a crucial role in the growth, repair, and maintenance of tissues in the body, especially muscles, skin, and organs. It’s made up of amino acids, which are the building blocks of life, and is essential for creating enzymes, hormones, and antibodies that regulate bodily functions and support immune health. Consuming enough protein is particularly important for athletes or anyone involved in physical activity, as it aids in muscle recovery and promotes lean muscle growth. Protein can be found in a wide variety of foods, from animal sources like chicken, beef, eggs, and dairy to plant-based sources like beans, lentils, tofu, and quinoa. A diet rich in high-quality protein helps maintain a healthy metabolism, keeps you feeling full longer, and supports overall energy levels, making it an indispensable component of a balanced diet.",
-        image: "images/tomel.avif"
-      },
-      {
-        name: "Vegetables",
-        description: "Vegetables are an essential part of a healthy diet, offering a rich array of vitamins, minerals, fiber, and antioxidants that support overall well-being. Packed with nutrients like vitamin C, potassium, folate, and magnesium, vegetables help boost immune function, improve heart health, and aid in digestion. They are also low in calories and high in water content, making them perfect for maintaining a healthy weight while keeping you hydrated. Different vegetables, from leafy greens like spinach and kale to cruciferous options like broccoli and cauliflower, provide unique health benefits, including reducing inflammation and protecting against chronic diseases. With their natural flavors, vibrant colors, and versatility in cooking, vegetables are a delicious and vital part of any balanced meal.",
-        image: "images/oriz me mish.webp"
-      }
-    ];
-
-    // Function to create and append food cards dynamically
-    function displayFoods() {
-      const foodGallery = document.getElementById("foodGallery");
-
-      foods.forEach(food => {
-        const card = document.createElement("div");
-        card.classList.add("food-card");
-
-        const foodImage = document.createElement("img");
-        foodImage.src = food.image;
-        foodImage.alt = food.name;
-
-        const foodName = document.createElement("h3");
-        foodName.textContent = food.name;
-
-        const foodDescription = document.createElement("p");
-        foodDescription.textContent = food.description;
-
-        const moreInfoButton = document.createElement("button");
-        moreInfoButton.textContent = "More Info";
-        moreInfoButton.onclick = () => alert(`Learn more about ${food.name}!`);
-
-        // Append elements to the card
-        card.appendChild(foodImage);
-        card.appendChild(foodName);
-        card.appendChild(foodDescription);
-        card.appendChild(moreInfoButton);
-
-        // Append card to the gallery
-        foodGallery.appendChild(card);
-      });
-    }
-
-    // Call the function to display foods on page load
-    window.onload = displayFoods;
-  </script>
 </body>
 </html>
