@@ -1,15 +1,9 @@
-
   
-  input.style.padding = "8px";
-  input.style.border = "2px solid gray";
-  input.style.borderRadius = "5px";
-
-  msg.style.display = "none";
-  msg.style.color = "red";
-  msg.style.fontWeight = "bold";
 
 
-$('#sort').sortable();
+$('.item-1').sortable();
+$('.item-3').sortable();
+$('.item-2').sortable();
 
 $(function(){
 	$("#accordion").accordion();
@@ -18,11 +12,11 @@ $(function(){
 $('#tabs').tabs();
 
 document.getElementById("submitBtn").addEventListener("click", function () {
-  const name = document.getElementById("name").value.trim();
-  const regex = /^[A-Za-z\s'-]+$/;
-  const errorElement = document.getElementById("error");
+  const name = document.getElementById("name").value;
+  const regex = /^[A-Za-z]+$/;
+  const errorAltre = document.getElementById("error");
 
-  if(name.match(valid_name_regex)){
+  if(name.match(regex)){
 
 
          return true;
@@ -30,7 +24,15 @@ document.getElementById("submitBtn").addEventListener("click", function () {
       }else{
 
 
-         document.getElementById("error").style.visibility = "visible";
-         document.getElementById("error").style.borderColor = "red";
+         errorAltre.style.visibility = "visible";
+         errorAltre.style.borderColor = "red";
          return false;
-      }
+      }})
+
+
+      var li = document.getElementById('item_goal');
+
+      li.style.backgroundColor = "#007fff;";
+      li.style.border = "3px solid #003eff;";
+      li.style.color = "#030101";
+

@@ -1093,7 +1093,7 @@ a.ui-button:active,
 	border: 1px solid #003eff;
 	background: #007fff;
 	font-weight: normal;
-	color: #ffffff;
+	color: #030101;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
@@ -1160,7 +1160,7 @@ a.ui-button:active,
 	background-image: none;
 }
 .ui-state-disabled .ui-icon 
-}
+
 
 
 
