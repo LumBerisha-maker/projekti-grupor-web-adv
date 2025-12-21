@@ -25,3 +25,18 @@ $(document).ready(function(){
     $('#' + goal).addClass('active');
   });
 });
+
+$(function () {
+  $("#goalTabs .nav-link").on("click", function (e) {
+    e.preventDefault(); 
+
+  
+    $("#goalTabs .nav-link").removeClass("active");
+    $(this).addClass("active");
+
+   
+    $(".goal-content").removeClass("active");
+    $("#" + goal).addClass("active");
+  });
+});
+

@@ -9,8 +9,8 @@
 <style>
   body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin:0; padding:0; }
   .intro { background: linear-gradient(to right, #28a745, #218838); color: white; text-align: center; padding: 80px 20px; }
-  .intro h1 { font-size: 2.5rem; margin-bottom: 20px; }
-  .intro p { font-size: 1.2rem; margin-bottom: 30px; }
+  .intro h1 {  margin-bottom: 20px; }
+  .intro p { margin-bottom: 30px; }
   .intro .btn { font-weight: bold; }
 
   .features .col-md-4 { margin-bottom: 20px; }
@@ -30,7 +30,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">GetUp</a>
@@ -50,14 +50,14 @@
   </div>
 </nav>
 
-<!-- Header -->
+
 <header class="intro">
   <h1>Transform Your Body Today</h1>
   <p>Join GetUp and start your fitness journey</p>
   <a href="signup.html" class="btn btn-outline-light btn-lg">Get Started</a>
 </header>
 
-<!-- Features -->
+
 <div class="container features text-center my-5">
   <div class="row">
     <div class="col-md-4">
@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<!-- Table Section -->
+
 <section class="container mb-5">
   <h2 class="text-center">What can you learn here</h2>
   <table class="table table-striped">
@@ -88,31 +88,14 @@
       </tr>
     </thead>
     <tbody id="workoutTable">
-      <!-- JS will populate this -->
+    
     </tbody>
   </table>
 </section>
 
-<!-- Goal Tabs -->
-<div class="container text-center mb-5">
-  <ul class="nav nav-tabs justify-content-center" id="goalTabs">
-    <li class="nav-item"><a class="nav-link active" data-goal="lose" href="#">Lose Weight</a></li>
-    <li class="nav-item"><a class="nav-link" data-goal="gain" href="#">Gain Muscle</a></li>
-    <li class="nav-item"><a class="nav-link" data-goal="burn" href="#">Burn Fat</a></li>
-  </ul>
 
-  <div class="goal-content active" id="lose">
-    <p>Cardio workouts, calorie deficit, healthy meals.</p>
-  </div>
-  <div class="goal-content" id="gain">
-    <p>Strength training, protein-rich foods, rest.</p>
-  </div>
-  <div class="goal-content" id="burn">
-    <p>HIIT workouts, balanced diet, consistency.</p>
-  </div>
-</div>
 
-<!-- Why Join -->
+
 <section class="container mb-5">
   <h2 class="text-center mb-4">Why do you need to join GetUp</h2>
   <div class="row cards text-center">
@@ -143,7 +126,7 @@
   </div>
 </section>
 
-<!-- Footer -->
+
 <footer>
   <div class="container text-center">
     <div class="row text-center text-md-start">
@@ -172,9 +155,11 @@
   </div>
 </footer>
 
+<script src="index.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+
 
 </body>
 </html>
