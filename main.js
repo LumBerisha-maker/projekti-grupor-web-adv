@@ -1,38 +1,27 @@
-  
 
+const workouts = [
+  {name: "Push-ups", level: "Beginner", equipment: "None", food: "Protein"},
+  {name: "Squats", level: "Intermediate", equipment: "None", food: "Carbs"},
+  {name: "Deadlift", level: "Advanced", equipment: "Barbell", food: "Protein"},
+  {name: "Plank", level: "Beginner", equipment: "None", food: "None"}
+];
 
-$('.item-1').sortable();
-$('.item-3').sortable();
-$('.item-2').sortable();
-
-$(function(){
-	$("#accordion").accordion();
+const tableBody = document.getElementById("workoutTable");
+workouts.forEach(w => {
+  const row = document.createElement("tr");
+  row.innerHTML = `<td>${w.name}</td><td>${w.level}</td><td>${w.equipment}</td><td>${w.food}</td>`;
+  tableBody.appendChild(row);
 });
 
-$('#tabs').tabs();
 
-document.getElementById("submitBtn").addEventListener("click", function () {
-  const name = document.getElementById("name").value;
-  const regex = /^[A-Za-z]+$/;
-  const errorAltre = document.getElementById("error");
+$(document).ready(function(){
+  $('#goalTabs a').click(function(e){
+    e.preventDefault();
+    $('#goalTabs a').removeClass('active');
+    $(this).addClass('active');
 
-  if(name.match(regex)){
-
-
-         return true;
-          
-      }else{
-
-
-         errorAltre.style.visibility = "visible";
-         errorAltre.style.borderColor = "red";
-         return false;
-      }})
-
-
-      var li = document.getElementById('item_goal');
-
-      li.style.backgroundColor = "#007fff;";
-      li.style.border = "3px solid #003eff;";
-      li.style.color = "#030101";
-
+    const goal = $(this).data('goal');
+    $('.goal-content').removeClass('active');
+    $('#' + goal).addClass('active');
+  });
+});

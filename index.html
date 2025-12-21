@@ -1,221 +1,180 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetUp - Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetUp - Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin:0; padding:0; }
+  .intro { background: linear-gradient(to right, #28a745, #218838); color: white; text-align: center; padding: 80px 20px; }
+  .intro h1 { font-size: 2.5rem; margin-bottom: 20px; }
+  .intro p { font-size: 1.2rem; margin-bottom: 30px; }
+  .intro .btn { font-weight: bold; }
 
+  .features .col-md-4 { margin-bottom: 20px; }
+  section h2 { margin-bottom: 30px; }
+
+  .cards .card { border-radius: 10px; transition: transform 0.2s; }
+  .cards .card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  .goal-content { display: none; }
+  .goal-content.active { display: block; margin-top: 20px; }
+
+  footer { background-color: #212529; color: white; padding: 40px 0; margin-top: 50px; }
+  footer a { color: white; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .row > div { margin-bottom: 20px; }
+</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">GetUp</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Food_and_Carbs.html">Food</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html">Sign Up</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="workouts.html">Workouts</a>
-        </li>
-     
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="Food_and_Carbs.html">Food</a></li>
+        <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-    
+<!-- Header -->
+<header class="intro">
+  <h1>Transform Your Body Today</h1>
+  <p>Join GetUp and start your fitness journey</p>
+  <a href="signup.html" class="btn btn-outline-light btn-lg">Get Started</a>
+</header>
 
-    <header class="intro">
-        <h1>Transform Your Body Today</h1>
-        <p>Join GetUp and start your fitness journey</p>
-        <div>
-            <a href="signup.html" class="btn btn-outline-light">Get Started</a>
-        </div>
-    </header>
+<!-- Features -->
+<div class="container features text-center my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Custom Plans</h5>
+      <p>Personalized workout routines</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Track Progress</h5>
+      <p>Monitor your fitness journey</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Expert Guidance</h5>
+      <p>Tips from certified trainers</p>
+    </div>
+  </div>
+</div>
 
-  
-        <div class="row text-center mb-5">
-            <div class="col-md-4 mb-3">
-                <h5>Custom Plans</h5>
-                <p>Personalized workout routines</p>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h5>Track Progress</h5>
-                <p>Monitor your fitness journey</p>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h5>Expert Guidance</h5>                            
-                <p>Tips from certified trainers</p>
-            </div>
-        </div>
+<!-- Table Section -->
+<section class="container mb-5">
+  <h2 class="text-center">What can you learn here</h2>
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Exercises</th>
+        <th>Level</th>
+        <th>Equipment</th>
+        <th>Food</th>
+      </tr>
+    </thead>
+    <tbody id="workoutTable">
+      <!-- JS will populate this -->
+    </tbody>
+  </table>
+</section>
 
-        <section class="mb-5">
-            <h2 class="text-center mb-4">What can you learn here</h2>
-            <table class="table table-striped">
-                <thead class="table-dark">
-                    <tr>
-                       
-                        <th>Exercises</th>
-                        <th>Level</th>
-                        <th>Equipment</th>
-                        <th>Food</th>
-                    </tr>
-                </thead>
-                <tbody id="workoutTable">
-                </tbody>
-            </table>
-        </section>
-
-        
-
+<!-- Goal Tabs -->
+<div class="container text-center mb-5">
   <ul class="nav nav-tabs justify-content-center" id="goalTabs">
-    <li class="nav-item">
-      <a class="nav-link active" data-goal="lose">Lose Weight</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-goal="gain">Gain Muscle</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-goal="burn">Burn Fat</a>
-    </li>
+    <li class="nav-item"><a class="nav-link active" data-goal="lose" href="#">Lose Weight</a></li>
+    <li class="nav-item"><a class="nav-link" data-goal="gain" href="#">Gain Muscle</a></li>
+    <li class="nav-item"><a class="nav-link" data-goal="burn" href="#">Burn Fat</a></li>
   </ul>
 
-  <div class="mt-4 text-center">
+  <div class="goal-content active" id="lose">
+    <p>Cardio workouts, calorie deficit, healthy meals.</p>
+  </div>
+  <div class="goal-content" id="gain">
+    <p>Strength training, protein-rich foods, rest.</p>
+  </div>
+  <div class="goal-content" id="burn">
+    <p>HIIT workouts, balanced diet, consistency.</p>
+  </div>
+</div>
 
-    <div class="goal-content" id="lose">
-      <p>Cardio workouts, calorie deficit, healthy meals.</p>
+<!-- Why Join -->
+<section class="container mb-5">
+  <h2 class="text-center mb-4">Why do you need to join GetUp</h2>
+  <div class="row cards text-center">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5>Track Progress</h5>
+          <p>Monitor workouts and improvements</p>
+        </div>
+      </div>
     </div>
-
-    <div class="goal-content d-none" id="gain">
-      <p>Strength training, protein-rich foods, rest.</p>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5>Set Goals</h5>
+          <p>Define and achieve fitness objectives</p>
+        </div>
+      </div>
     </div>
-
-    <div class="goal-content d-none" id="burn">
-      <p>HIIT workouts, balanced diet, consistency.</p>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5>Join Community</h5>
+          <p>Connect with fitness enthusiasts</p>
+        </div>
+      </div>
     </div>
-
   </div>
 </section>
 
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div class="row text-center text-md-start">
 
+      <div class="col-md-4">
+        <h5>About GetUp</h5>
+        <p>Your daily fitness companion. Train smart, eat better, stay active.</p>
+      </div>
 
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="workouts.html">Workouts</a></p>
+        <p><a href="signup.html">Sign Up</a></p>
+      </div>
 
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p>Email: info@getup.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
 
+    </div>
+    <hr style="background-color:white;">
+    <p class="text-center mb-0">&copy; 2025 GetUp. All rights reserved.</p>
+  </div>
+</footer>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
-
-       <section class="mt-5">
-            <h2 class="text-center mb-4">Why do you need to  join GetUp</h2> 
-
-            <div class="cards">
-         
-                <div class="col-md-4 text-center mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Track Progress</h5>
-                            <p>Monitor workouts and improvements</p>
-                        </div>
-                    </div>
-              
-                <div class="col-md-4 text-center mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Set Goals</h5>
-                            <p>Define and achieve fitness objectives</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Join Community</h5>
-                            <p>Connect with fitness enthusiasts</p>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-
-         
-        </section>
-
-
-
-<section class="goal">
-
-<div id="tabs">
-
-    <h2>What goal do you want?</h2>
-
-	<ul class>
-		<li id="item_goal"><a href="#item-1">Gain Muscle</a></li>
-		<li id="item_goal"><a href="#item-2">Lose Weight</a></li>
-		<li id="item_goal"><a href="#item-3">Burn Fat</a></li>
-	</ul>
-
-	<div id="item-1">
-		<p>Ultimately, you need to pick a healthy eating plan you can stick to, Stewart says. <br></br>The benefit of a low-carb approach is that it simply involves learning better food choices—no <br></br>calorie-counting is necessary. In general, a low-carb way of eating shifts your intake away from problem foods—those high in <br></br>carbs and sugar and without much fiber, like bread, bagels and sodas—and toward high-fiber or high-protein choices, like <br></br>vegetables, beans and healthy meats.</p>
-	</div>
-	<div id="item-2">
-		<p>To gain muscle, you need a consistent plan combining progressive strength training <br></br>(like squats, presses, rows) with adequate protein and calories, focusing on compound lifts, proper recovery (sleep!), <br></br>and gradually increasing intensity (progressive overload) for continuous growth. Hydration, managing stress, <br></br>and eating whole foods (protein, carbs, fats) fuel muscle repair and energy, <br></br>while rest days allow muscles to rebuild bigger and stronger. </p>
-	</div>
-	<div id="item-3">
-		<p>To lose weight, focus on a balanced approach of eating fewer calories (especially from sugar, processed <br></br>foods, and refined carbs) while increasing physical activity (150 mins/week of moderate exercise like <br></br>brisk walking/cycling) and strength training to build muscle, all while getting enough sleep and <br></br>staying hydrated with water, aiming for a steady 1-2 lbs/week loss for sustainable results. </p>
-	</div>
-	
-</div>
-
-
-</section>
-
-       
-       
-
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            
-        
-              
-                    
-                </div> <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <p>Email: info@getup.com</p>
-                    <p>Phone: (555) 123-4567</p>
-                </div>
-            </div>
-            <hr>
-            <p>&copy; 2025 GetUp</p>
-        </div>
-    </footer>
-    
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
-
-
-
- 
-
-

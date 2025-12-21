@@ -1,88 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetUp - Sign Up</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background-color: #f8f9fa; margin:0; padding:0; font-family: Arial, sans-serif;}
+  
+  header {
+    background: linear-gradient(to right, #28a745, #218838);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+  }
 
-    <title>GetUp - Sign Up</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-   
+  .form-container { 
+    max-width: 400px; 
+    margin: 50px auto; 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
+  .form-control { margin-bottom: 10px; }
+
+  .error { 
+    color: red; 
+    font-weight: bold; 
+    display: none; 
+    margin-bottom: 10px; 
+  }
+
+  footer {
+    background-color: #212529; 
+    color: white; 
+    padding: 40px 0; 
+    margin-top: 50px;
+  }
+
+  footer a { color: white; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  footer .row > div { margin-bottom: 20px; }
+
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">GetUp</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Food_and_Carbs.html">Food</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html">Sign Up</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="workouts.html">Workouts</a>
-        </li>
-     
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <header class="bg-success text-white text-center py-4">
-        <h1>Join GetUp Today</h1>
-        <p>Start your fitness journey</p>
-    </header>
 
 
-<div class="container mt-5">
-  <h2 class="text-center mb-3">Sign Up</h2>
+<header>
+  <h1>Join GetUp Today</h1>
+  <p>Start your fitness journey</p>
+</header>
 
-  <input type="text" id="name" class="form-control mb-2" placeholder="Enter your name">
 
-  <span id="error" style="visibility: hidden; color: red; font-weight: bold;">
-    Invalid name
-  </span>
+<div class="form-container">
+  <h3 class="text-center mb-4">Sign Up</h3>
 
-  <button id="submitBtn" class="btn btn-primary mt-3 w-100">
-    Submit
-  </button>
+  <input type="text" id="name" class="form-control" placeholder="Enter your first name">
+  <span id="nameError" class="error">Invalid name</span>
+
+  <input type="text" id="surname" class="form-control" placeholder="Enter your surname">
+  <span id="surnameError" class="error">Invalid surname</span>
+
+  <button id="submitBtn" class="btn btn-success w-100 mt-3">Submit</button>
 </div>
 
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <div class="row">
-               
-               
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <p>Email: info@getup.com</p>
-                    <p>Phone: (555) 123-4567</p>
-                </div>
-            </div>
-            <hr>
-            <p>&copy; 2025 GetUp</p>
-        </div>
-    </footer>
+<footer>
+  <div class="container">
+    <div class="row text-center text-md-start">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <div class="col-md-4">
+        <h5>About GetUp</h5>
+        <p>Your daily fitness companion. Train smart, eat better, stay active.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="workouts.html">Workouts</a></p>
+        <p><a href="signup.html">Sign Up</a></p>
+      </div>
+
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p>Email: info@getup.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+
+    </div>
+    <hr style="background-color:white;">
+    <p class="text-center mb-0">&copy; 2025 GetUp. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+document.getElementById("submitBtn").addEventListener("click", function() {
+  const name = document.getElementById("name").value.trim();
+  const surname = document.getElementById("surname").value.trim();
+  const regex = /^[A-Za-z]{2,}$/;
+
+  const nameError = document.getElementById("nameError");
+  const surnameError = document.getElementById("surnameError");
+
+
+  if (!regex.test(name)) {
+    nameError.style.display = "block";
+  } else {
+    nameError.style.display = "none";
+  }
+
+
+  if (!regex.test(surname)) {
+    surnameError.style.display = "block";
+  } else {
+    surnameError.style.display = "none";
+  }
+
+  if (regex.test(name) && regex.test(surname)) {
+    alert("Sign-up successful!");
+  }
+});
+</script>
+
 </body>
 </html>
-
-    
