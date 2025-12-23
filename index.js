@@ -8,9 +8,9 @@ const workouts = [
 
 const tableBody = document.getElementById("workoutTable");
 workouts.forEach(w => {
-  const row = document.createElement("tr");
+  const row = document.createElement("tr")
   row.innerHTML = `<td>${w.name}</td><td>${w.level}</td><td>${w.equipment}</td><td>${w.food}</td>`;
-  tableBody.appendChild(row);
+tableBody.appendChild(row)
 });
 
 

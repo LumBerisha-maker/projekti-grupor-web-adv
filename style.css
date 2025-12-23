@@ -1,12 +1,12 @@
 
-body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin:0; padding:0; }
-  .intro { background: linear-gradient(to right, #28a745, #218838); color: white; text-align: center; padding: 80px 20px; }
+body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin:0px; padding:0px; }
+  .intro { background: linear-gradient(  #28a745, #218838); color: white; text-align: center; padding: 80px 20px; }
   .intro h1 {  margin-bottom: 20px; }
   .intro p { margin-bottom: 30px; }
   .intro .btn { font-weight: bold; }
   
 
-  .features .col-md-4 { margin-bottom: 20px; }
+
   section h2 { margin-bottom: 30px; }
 
 
@@ -14,8 +14,7 @@ body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin:0; padd
   .cards .card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
 
-  .goal-content { display: none; }
-  .goal-content.active { display: block; margin-top: 20px; }
+
 
 
   footer { background-color: #212529; color: white; padding: 40px 0; margin-top: 50px; }
