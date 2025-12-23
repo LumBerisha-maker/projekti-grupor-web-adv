@@ -1,243 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Products</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym Products</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    background: #f5f5f5;
+  }
+
+  header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .search-box {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-content h3 {
+    margin: 0 0 10px;
+  }
+
+  .price {
+    color: #e63946;
+    font-weight: bold;
+  }
+
+  footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+</style>
 </head>
+
 <body>
 
+<header>
+  <h1>Gym Products Store</h1>
+  <p>Power Your Workout</p>
+</header>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Food_and_Carbs.html">Food</a>
-        </li>
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search products...">
+</div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html">Sign Up</a>
-        </li>
+<div class="container">
+  <div class="products" id="products"></div>
+</div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="workouts.html">Workouts</a>
-        </li>
-     
-      </ul>
-    </div>
-  </div>
-</nav>
+<footer>
+  <p>© 2025 Gym Products | All Rights Reserved</p>
+</footer>
 
-    <header>
-        <h1>Gym Equipment Store</h1>
-        <div id="cart">
-            <span>Cart: <span id="cart-count">0</span> items</span>
+<script>
+  const productData = [
+    {
+      name: "Dumbbells",
+      price: "$49.99",
+      img: "images/dumbell.webp"
+    },
+    {
+      name: "Treadmill",
+      price: "$699.99",
+      img: "images/treadmill.avif"
+    },
+    {
+      name: "Weight Bar",
+      price: "$29.99",
+      img: "images/weight.webp"
+    },
+    {
+      name: "Plank Bar",
+      price: "$19.99",
+      img: "images/workout.webp"
+    }
+  ];
+
+  const productsContainer = document.getElementById("products");
+  const searchInput = document.getElementById("search");
+
+  function displayProducts(products) {
+    productsContainer.innerHTML = "";
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${product.img}" alt="${product.name}">
+        <div class="card-content">
+          <h3>${product.name}</h3>
+          <p class="price">${product.price}</p>
         </div>
-    </header>
+      `;
 
-    <main>
-        <section id="product-list"></section>
-    </main>
+      productsContainer.appendChild(card);
+    });
+  }
 
-    <footer>
-        <p>&copy; 2025 Gym Gear Shop</p>
-    </footer>
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
+    const filtered = productData.filter(product =>
+      product.name.toLowerCase().includes(value)
+    );
+    displayProducts(filtered);
+  });
 
-    <script src="main.js"></script>
+  // Initial render
+  displayProducts(productData);
+</script>
+
 </body>
 </html>
-3. CSS (styles.css)
-Here we’ll style the page to make it visually appealing.
-
-css
-Copy code
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e3a8a;
-    color: white;
-    padding: 10px 20px;
-}
-
-header h1 {
-    font-size: 24px;
-}
-
-#cart {
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* Product List */
-#product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Product Card */
-.product-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
-}
-
-.product-card h2 {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.product-card p {
-    color: #888;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.product-card button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.product-card button:hover {
-    background-color: #45a049;
-}
-4. JavaScript (script.js)
-In the JavaScript, we’ll dynamically load products, handle adding them to the shopping cart, and update the cart count.
-
-javascript
-Copy code
-// Product data
-const products = [
-    {
-        id: 1,
-        name: 'Dumbbells Set',
-        description: 'A set of adjustable dumbbells for your home gym.',
-        price: 79.99,
-        image: 'https://via.placeholder.com/250x150?text=Dumbbells'
-    },
-    {
-        id: 2,
-        name: 'Yoga Mat',
-        description: 'Non-slip yoga mat for comfort and stability.',
-        price: 19.99,
-        image: 'https://via.placeholder.com/250x150?text=Yoga+Mat'
-    },
-    {
-        id: 3,
-        name: 'Resistance Bands',
-        description: 'Set of resistance bands for strength training.',
-        price: 29.99,
-        image: 'https://via.placeholder.com/250x150?text=Resistance+Bands'
-    },
-    {
-        id: 4,
-        name: 'Kettlebell',
-        description: 'Durable kettlebell for weight training.',
-        price: 49.99,
-        image: 'https://via.placeholder.com/250x150?text=Kettlebell'
-    }
-];
-
-// Cart functionality
-class Cart {
-    constructor() {
-        this.items = [];
-    }
-
-    addItem(product) {
-        this.items.push(product);
-    }
-
-    getItemCount() {
-        return this.items.length;
-    }
-}
-
-// Initialize Cart
-const cart = new Cart();
-
-// DOM elements
-const productListElement = document.getElementById('product-list');
-const cartCountElement = document.getElementById('cart-count');
-
-// Function to render products
-function renderProducts() {
-    productListElement.innerHTML = ''; // Clear previous content
-
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <p>$${product.price.toFixed(2)}</p>
-            <button data-id="${product.id}">Add to Cart</button>
-        `;
-
-        // Add event listener for the button
-        const button = productCard.querySelector('button');
-        button.addEventListener('click', () => addToCart(product));
-
-        productListElement.appendChild(productCard);
-    });
-}
-
-// Function to add product to cart
-function addToCart(product) {
-    cart.addItem(product);
-    cartCountElement.textContent = cart.getItemCount();
-}
-
-// Initial render
-renderProducts();

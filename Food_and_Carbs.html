@@ -1,122 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Food and Carbs</title>
+  <title>Food & Carbs Project</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background: #f2f2f2;
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    main {
       padding: 20px;
     }
 
-    h1 {
-      text-align: center;
-    }
-
-    .food-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .food-card {
+    .food-item {
       background: white;
-      width: 220px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      overflow: hidden;
-      text-align: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .food-card img {
-      width: 100%;
-      height: 140px;
+    .food-item img {
+      width: 80px;
+      height: 80px;
       object-fit: cover;
+      border-radius: 5px;
     }
 
-    .food-card h3 {
-      margin: 10px 0 5px;
+    .food-info {
+      flex: 1;
     }
 
-    .food-card p {
-      margin-bottom: 10px;
-      color: #555;
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-  <h1>Food & Carbohydrates</h1>
-  <p style="text-align:center;">Common foods and their carb content</p>
+  <header>
+    <h1>Food & Carbohydrates</h1>
+    <p>Simple JavaScript carb counter</p>
+  </header>
 
-  <div class="food-container">
-    <div class="food-card">
-      <img src="images/oriz me mish.webp" alt="Rice">
-      <h3>Rice</h3>
-      <p>45g carbs</p>
+  <main>
+    <h2>Select foods:</h2>
+
+    <div class="food-item">
+      <img src="images/oriz me pul.jpg" alt="Rice and Meat">
+      <div class="food-info">
+        <p>Rice and Meat (100g carbs)</p>
+        <input type="checkbox" data-carbs="15">
+      </div>
     </div>
 
-    <div class="food-card">
-      <img src="images/qumshti2.avif" alt="Oats and berries">
-      <h3>Oats and berries</h3>
-      <p>50g carbs</p>
+    <div class="food-item">
+      <img src="images/qumshti2.avif" alt="Oats and Berries">
+      <div class="food-info">
+        <p>Oats and Berries (45g carbs)</p>
+        <input type="checkbox" data-carbs="45">
+      </div>
     </div>
 
-    <div class="food-card">
-      <img src="images/tomel.avif" alt="Milkshake`">
-      <h3>Milkshake</h3>
-      <p>25g carbs</p>
+    <div class="food-item">
+      <img src="images/tomel.avif" alt="Milkshake">
+      <div class="food-info">
+        <p>MilkShake (25g carbs)</p>
+        <input type="checkbox" data-carbs="25">
+      </div>
     </div>
 
-    <div class="food-card">
-      
-      <img src="images/oriz me pul.jpg" alt="Chicken">
-     
-      <p>230g carbs</p>
+    <div class="food-item">
+      <img src="images/oriz me mish.webp" alt="Vegetables">
+      <div class="food-info">
+        <p>Vegetables (30g carbs)</p>
+        <input type="checkbox" data-carbs="12">
+      </div>
     </div>
-  </div>
+
+    <div class="total">
+      Total Carbs: <span id="totalCarbs">0</span> g
+    </div>
+  </main>
+
+  <footer>
+    <p>Food & Carbs Project | JavaScript Reactive Example</p>
+  </footer>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const totalCarbs = document.getElementById('totalCarbs');
+
+    function calculateCarbs() {
+      let total = 0;
+
+      checkboxes.forEach(item => {
+        if (item.checked) {
+          total += Number(item.dataset.carbs);
+        }
+      });
+
+      totalCarbs.textContent = total;
+    }
+
+    checkboxes.forEach(item => {
+      item.addEventListener('change', calculateCarbs);
+    });
+  </script>
 
 </body>
 </html>
-
-<div class="container text-center">
-  <div class="row align-items-start">
-    <div class="col">
-      Rice and Meat
-
-      <h3>Rice is a cereal grain and in its domesticated form is the staple food of over half of the world's 
-      population, particularly 
-      in Asia and Africa. Rice is the seed of the grass species Oryza sativa (Asian rice)</h3>
-     
-    </div>
-    <div class="col">
-     Oats and berries
-
-     <h3>The combination of oats and berries has been a staple in many health-conscious individuals’ diets for years.
-      The idea of pairing the fiber-rich, comforting goodness of oats with the antioxidant-packed, sweet flavor of berries 
-      seems like a match made in heaven. But is this 
-     pairing truly beneficial for our health, or are there some underlying concerns that we should be aware of?</h3>
-   
-    </div>
-    <div class="col">
-     Milkshakes
-
-    <h3>People often associate protein milkshakes with a less-than-desirable texture 
-     and taste. However, that doesn’t have to be the case. With a little creativity and experimentation in the kitchen, 
-     it’s possible to create rich, smooth, and indulgent protein milkshakes that are perfect for fueling up after a workout or as a
-      quick snack on-the-go. These shakes can be 
-     just as decadent and sweet as your favorite ice cream-filled treats, minus the added calories and guilt. People often associate protein milkshakes with a less-than-desirable texture 
-     and taste. However, that doesn’t have to be the case. With a little creativity and experimentation in the kitchen, 
-     it’s possible to create rich, smooth, and indulgent protein milkshakes that are perfect for fueling up after a workout or as a
-      quick snack on-the-go. These shakes can be 
-     just as decadent and sweet as your favorite ice cream-filled treats, minus the added calories and guilt.</h3>
-     
-    </div>
-  </div>
-</div>
-
